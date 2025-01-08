@@ -140,13 +140,13 @@ namespace pixelart_converter
 		private IQuantizer SelectQuantizer()
 		{
 			IQuantizer quantizer;
-			if (quantizerBox.Text == "RGB 332")
-			{
-				quantizer = PredefinedColorsQuantizer.SystemDefault8BppPalette();
-			}
-			else if (quantizerBox.Text == "RGB 888")
+			if (quantizerBox.Text == "RGB 888")
 			{
 				quantizer = PredefinedColorsQuantizer.Rgb888();
+			}
+			else if (quantizerBox.Text == "RGB 332")
+			{
+				quantizer = PredefinedColorsQuantizer.SystemDefault8BppPalette();
 			}
 			else if (quantizerBox.Text == "Grayscale")
 			{
@@ -189,8 +189,8 @@ namespace pixelart_converter
 		}
 		private void QuantizerToBox()
 		{
-			quantizerBox.Items.Add("RGB 332");
 			quantizerBox.Items.Add("RGB 888");
+			quantizerBox.Items.Add("RGB 332");
 			quantizerBox.Items.Add("Grayscale");
 			quantizerBox.Items.Add("Black & White");
 

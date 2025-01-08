@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:pixelart_converter"
         mc:Ignorable="d"
         Title="MainWindow" Width="1280" Height="720"
+        FontSize="15"
         Background="#121212">
 
 
@@ -45,8 +46,8 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <TextBox Name="pixelNum" Grid.Column="0" Margin="0,10,0,10" Text="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                    <Button Grid.Column="1" Margin="0,10,0,10" Content="^" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="PixelUp"/>
-                    <Button Grid.Column="2" Margin="0,10,0,10" Content="v" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="PixelDown"/>
+                    <Button Grid.Column="1" Margin="0,10,0,10" Content="+" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="PixelUp"/>
+                    <Button Grid.Column="2" Margin="0,10,0,10" Content="-" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="PixelDown"/>
                 </Grid>
             </Grid>
             <Grid Grid.Column="2">

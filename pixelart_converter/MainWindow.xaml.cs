@@ -281,7 +281,7 @@ namespace pixelart_converter
 				SaveFileDialog saveFileDialog = new SaveFileDialog();
 				saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg";
 				saveFileDialog.Title = "Save Image";
-				saveFileDialog.FileName = "pixelatedImage.jpg";
+				saveFileDialog.FileName = "pixelatedImage.png";
 
 				if (saveFileDialog.ShowDialog() == true)
 				{

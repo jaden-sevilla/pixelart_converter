@@ -1,0 +1,72 @@
+﻿<Window x:Class="pixelart_converter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pixelart_converter"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="1280" Height="720"
+        Background="#121212">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Name="originalImage" Margin="30,30,30,30" />
+        <Image Name="pixelImage" Grid.Column="1" Margin="30,30,30,30" />
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="10" Content="Open File" Click="OpenFile"/>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Margin="10,10,0,10" Text="Pixel Size:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" />
+                <Grid Grid.Column="1" Grid.ColumnSpan="3" Margin="0,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="pixelNum" Grid.Column="0" Margin="0,10,0,10" Text="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <Button Grid.Column="1" Margin="0,10,0,10" Content="^" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="PixelUp"/>
+                    <Button Grid.Column="2" Margin="0,10,0,10" Content="v" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="PixelDown"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox Margin="10,10,0,10" Text="Palette: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                <ComboBox Name="quantizerBox" Grid.Column="1" Margin="0,10,10,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox Margin="10,10,0,10" Text="Dither: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                <ComboBox Name="ditherBox" Grid.Column="1" Margin="0,10,10,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Button Name="convertButton" Grid.Column="4" Margin="10" Content="Convert" Click="convertButton_Click"/>
+            <Button Name="saveButton" Grid.Column="5" Margin="10" Content="Save" Click="saveButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>
